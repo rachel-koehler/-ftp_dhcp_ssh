@@ -97,15 +97,15 @@ Les tests de connexion ont été effectués avec FileZilla et la ligne de comman
 Pour plus de détails, consultez les fichiers dans le dossier `ConfigurationFiles` et le document `SecurityMeasures.md`.
 installation d'OpenSSH :sudo apt install openssh-server
 
--Configuration dans /etc/ssh/sshd_config:
+. Configuration dans /etc/ssh/sshd_config:
 
--Restrictions des utilisateurs :AllowUsers laplateforme
+. Restrictions des utilisateurs :AllowUsers laplateforme
 
--Changement du port SSH :Port 6500
+. Changement du port SSH :Port 6500
 
--Interdiction des connexions racine :PermitRootLogin no
+. Interdiction des connexions racine :PermitRootLogin no
 
--Redémarrage du service :sudo systemctl restart ssh
+. Redémarrage du service :sudo systemctl restart ssh
 
 
 ***
