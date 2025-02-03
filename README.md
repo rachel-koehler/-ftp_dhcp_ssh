@@ -21,12 +21,10 @@ Pour plus de détails, consultez les fichiers dans le dossier `ConfigurationFile
 
 ***
 # INSTALLATION & CONFIGURATION DU SERVEUR FTP et SSH
-## Configuration des services FTP et SSH
 *Ce projet consiste à configurer un serveur FTP (proFTPd) et SSH sur une machine Linux. Les services ont été configurés pour garantir un transfert de fichiers sécurisé et une gestion des accès restreinte.*
 
 ## Services configurés
-- Serveur FTP (proFTPd)
-- Serveur SSH (avec SFTP)
+- Serveur DNS
 
 ##  Tests de connexion
 Les tests de connexion ont été effectués avec FileZilla et la ligne de commande. Toutes les erreurs rencontrées ont été documentées et résolues.
@@ -70,8 +68,9 @@ Rentrer nombre de clients max :
 ***
 
 # INSTALLATION & CONFIGURATION DU SERVEUR DNS
-## Configuration des services FTP et SSH
+## Configuration du service DNS
 Ce projet consiste à configurer un serveur FTP (proFTPd) et SSH sur une machine Linux. Les services ont été configurés pour garantir un transfert de fichiers sécurisé et une gestion des accès restreinte.
+Ce projet consiste à installer un serveur DNS sur la première machine virtuelle (Debian sans interface graphique) et configurer le DNS de telle sorte que le lien soit "dns.ftp.com", pointant vers l'adresse IP de la deuxième machine où le serveur FTP est installé.
 
 ## Services configurés
 - Serveur FTP (proFTPd)
