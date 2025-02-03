@@ -5,8 +5,9 @@
 *Ce projet consiste en l'installation d'un serveur DHCP sur une première machine Linux (Debian sans interface graphique), de sorte qu'il puisse attribuer des adresses de catégorie B aux machines connectées au réseau.*
 
 ## Services configurés
-- Serveur FTP (proFTPd)
-- Serveur SSH (avec SFTP)
+- Serveur DHCP
+
+
 
 ##  Tests de connexion
 Les tests de connexion ont été effectués avec FileZilla et la ligne de commande. Toutes les erreurs rencontrées ont été documentées et résolues.
@@ -35,7 +36,37 @@ Les tests de connexion ont été effectués avec FileZilla et la ligne de comman
 - Modification du port SSH par défaut
 - Blocage des connexions non authentifiées
 
-Pour plus de détails, consultez les fichiers dans le dossier `ConfigurationFiles` et le document `SecurityMeasures.md`.
+## Points clés FTP
+
+- Installer proFTPD : `sudo apt install proftpd -y`
+
+- Démarrer le service proftpd : `sudo systemctl start proftpd`
+
+- Afficher les informations sur l'état du service (service en cours d'exécution, erreurs...) :  `sudo systemctl status proftpd` 
+
+- Installer UFW :  `sudo apt-get install ufw`
+- S'assurer que le client peut se connecter sur le port 21 : `sudo ufw allow 21/tcp`
+
+- Créer le profil "laplateforme" : `sudo adduser laplateforme`
+
+- Vérifier l'existence du profil crée : `su - laplateforme`
+
+
+**Modification du fichier /etc/proftpd**
+
+Rentrer nombre de clients max :
+	-> MaxInstances 1
+	-> MaxClientsPerHost 1
+
+- Vérifier la bonne configuration du fichier (ex. Vérifier la présence de fautes de frappe) : `sudo proftpd -t` 
+
+## Points clés SSH
+- Installation d'OpenSSH : `sudo apt install openssh-server`
+- Configuration dans /etc/ssh/sshd_config :
+
+![Pasted image 20250130180127](https://github.com/user-attachments/assets/5290ba4e-f00a-494b-a24e-196c12ea9baa)
+
+- Redémarrage du service : `sudo systemctl restart ssh`
 ***
 
 # INSTALLATION & CONFIGURATION DU SERVEUR DNS
