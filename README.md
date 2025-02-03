@@ -72,6 +72,16 @@ Rentrer nombre de clients max :
 Ce projet consiste à configurer un serveur FTP (proFTPd) et SSH sur une machine Linux. Les services ont été configurés pour garantir un transfert de fichiers sécurisé et une gestion des accès restreinte.
 Ce projet consiste à installer un serveur DNS sur la première machine virtuelle (Debian sans interface graphique) et configurer le DNS de telle sorte que le lien soit "dns.ftp.com", pointant vers l'adresse IP de la deuxième machine où le serveur FTP est installé.
 
+
+Points clés :
+- Installation de BIND9 : sudo apt install bind9 -y
+
+- Configuration des zones DNS dans : /etc/bind/zones/db.ftp.com
+
+- Configuration des options DNS dans : /etc/bind/named.conf.options
+
+- Redémarrage du service : sudo systemctl restart bind9
+
 ## Services configurés
 - Serveur FTP (proFTPd)
 - Serveur SSH (avec SFTP)
